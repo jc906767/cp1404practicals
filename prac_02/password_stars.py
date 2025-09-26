@@ -7,7 +7,7 @@ def main():
     MIN_PASSWORD_LENGTH = 6
     password = get_password(MIN_PASSWORD_LENGTH)
 
-
+#Function that collects user's password and checks the length
 def get_password(MIN_PASSWORD_LENGTH):
     user_password = input("What is your password? ")
     while len(user_password) < MIN_PASSWORD_LENGTH:
