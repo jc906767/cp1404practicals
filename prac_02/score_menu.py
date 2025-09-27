@@ -8,14 +8,14 @@ P - Print result
 S - Show stars
 Q - Quit"""
     score = None
-    print(menu)
+    print(MENU)
     choice = input(">>> ").upper()
 
     while choice != "Q":
         if choice == "G":
             user_score = input("Please enter a score between 0 and 100: ")
-            while not user_score.isdigit() or not (0 <= int(user_score) <= 100):
-                print("Invalid score")
+            while int(user_score) < 0 or int(user_score) > 100:
+                print("That score is invalid.")
                 user_score = input("Please enter a score between 0 and 100: ")
             score = int(user_score)
         elif choice == "P":
@@ -29,15 +29,22 @@ Q - Quit"""
             else:
                 print(print_stars(score))
         else:
-            print("Invalid option")
+            print("Invalid option, please choose an option from the menu.")
 
-        print(menu)
+        print(MENU)
         choice = input(">>> ").upper()
 
     print("Farewell.")
 
+def score_result(score):
+    if score >= 90:
+        return "Excellent"
+    if score >= 50:
+        return "Passable"
+    return "Bad"
 
 
-
+def print_stars(number_of_stars):
+    return "*" * number_of_stars
 
 main()
