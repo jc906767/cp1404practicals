@@ -24,7 +24,7 @@ with open("numbers.txt", "r") as input_file:
     number2 = int(input_file.readline())
     print(number1 + number2)
 
-
+# 4. Read all numbers in numbers.txt and print their total
 total = 0
 with open("numbers.txt", "r") as in_file:
     for line in in_file:
