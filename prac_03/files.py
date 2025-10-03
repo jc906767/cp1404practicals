@@ -17,15 +17,12 @@ in_file.close()
 print(f"Hi {name}!")
 
 
-# TODO: 3) Create a text file called numbers.txt and save it in your prac
-#  directory. Put the following three numbers on separate lines in the
-#  file and save it:
-# 17
-# 42
-# 400
-# Write code that opens numbers.txt, reads only the first two numbers,
-# adds them together then prints the result, which should be... 59. Use
-# with instead of open and close for this question.
+# 3. Create numbers.txt with these lines: 17, 42, 400
+# Then read only the first two numbers, add them, and print result
+with open("numbers.txt", "r") as in_file:
+    number1 = int(in_file.readline())
+    number2 = int(in_file.readline())
+    print(number1 + number2)
 
 
 # TODO: 4) ow write a fourth block of code that prints the total for all
