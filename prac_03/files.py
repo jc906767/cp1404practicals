@@ -3,9 +3,11 @@ CP1404/CP5632 - Practical
 Files exercises
 """
 
-# TODO: 1) Write code that asks the user for their name, then opens a file
-#  called name.txt and writes that name to it. Use open and close for
-#  this question.
+# 1. Ask user for their name, write it to name.txt
+name = input("Enter your name: ")
+out_file = open("name.txt", "w")
+print(name, file=out_file)
+out_file.close()
 
 
 # TODO: 2) write code that opens "name.txt" and reads the name (as above)
