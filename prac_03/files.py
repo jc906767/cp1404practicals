@@ -10,11 +10,11 @@ print(name, file=out_file)
 out_file.close()
 
 
-# TODO: 2) write code that opens "name.txt" and reads the name (as above)
-#  then prints (note the exact output),
-# Hi Bob! (or whatever the name is in the file). Do not simply print the
-# user's input variable!
-# Use open and close for this question.
+# 2. Read the name from name.txt and print it
+in_file = open("name.txt", "r")
+name = in_file.read().strip()
+in_file.close()
+print(f"Hi {name}!")
 
 
 # TODO: 3) Create a text file called numbers.txt and save it in your prac
