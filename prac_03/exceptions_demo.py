@@ -5,9 +5,14 @@ Answer the following questions:
 
 try:
     numerator = int(input("Enter the numerator: "))
-    denominator = int(input("Enter the denominator: "))
+    denominator = int(input("Enter the denominator (not zero): "))
+    while denominator == 0:
+        print("The denominator cannot be zero!")
+        denominator = int(input("Enter the denominator (not zero): "))
+
     fraction = numerator / denominator
     print(fraction)
+    print("Finished.")
 except ValueError:
     print("Numerator and denominator must be valid numbers!")
 except ZeroDivisionError:
