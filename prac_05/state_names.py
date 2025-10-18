@@ -21,8 +21,11 @@ for code, name in CODE_TO_NAME.items():
 
 state_code = input("Enter short state: ").upper()
 while state_code != "":
-    if state_code in CODE_TO_NAME:
-        print(state_code, "is", CODE_TO_NAME[state_code])
-    else:
+    try:
+        # Try to access the dictionary key directly
+        state_name = CODE_TO_NAME[state_code]
+        print(f"{state_code} is {state_name}")
+    except KeyError:
+        # Handle the case where the key doesn't exist
         print("Invalid short state")
     state_code = input("Enter short state: ") #could also add .upper() here
