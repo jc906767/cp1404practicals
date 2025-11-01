@@ -36,7 +36,7 @@ def main():
     print("My guitars!")
     guitars = []
 
-    # --- Input loop ---
+
     name = input("Name: ")
     while name != "":
         year = int(input("Year: "))
