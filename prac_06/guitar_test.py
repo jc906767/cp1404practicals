@@ -3,13 +3,18 @@ Guitar class tests.
 
 Estimate: 15 minutes
 Actual: 10 minutes
+
+Guitars program.
+
+Estimate: 20 minutes
+Actual: 25 minutes
 """
 
+"""
 from guitar import Guitar
 
-
 def main():
-    """Test the methods of the Guitar class."""
+    #Test the methods of the Guitar class.
     gibson = Guitar("Gibson L-5 CES", 1922, 16035.40)
     another = Guitar("Another Guitar", 2013, 1000)
 
@@ -18,6 +23,44 @@ def main():
 
     print(f"{gibson.name} is_vintage() - Expected True. Got {gibson.is_vintage()}")
     print(f"{another.name} is_vintage() - Expected False. Got {another.is_vintage()}")
+
+if __name__ == "__main__":
+    main()
+"""
+
+from guitar import Guitar
+
+
+def main():
+    """Collect guitars from user then display the details."""
+    print("My guitars!")
+    guitars = []
+
+    # --- Input loop ---
+    name = input("Name: ")
+    while name != "":
+        year = int(input("Year: "))
+        cost = float(input("Cost: $"))
+        guitar = Guitar(name, year, cost)
+        guitars.append(guitar)
+        print(f"{guitar} added.\n")
+        name = input("Name: ")
+
+    # Uncomment these lines to avoid re-typing during testing.
+    #guitars.append(Guitar("Gibson L-5 CES", 1922, 16035.40))
+    #guitars.append(Guitar("Line 6 JTV-59", 2010, 1512.90))
+
+    # --- Output ---
+    if not guitars:
+        print("No guitars.")
+        return
+
+    print("These are my guitars:")
+    name_width = max(len(guitar.name) for guitar in guitars)
+    for i, guitar in enumerate(guitars, 1):
+        vintage_string = " (vintage)" if guitar.is_vintage() else ""
+        print(f"Guitar {i}:  {guitar.name:{name_width}} ({guitar.year}), "
+              f"worth ${guitar.cost:10,.2f}{vintage_string}")
 
 
 if __name__ == "__main__":
