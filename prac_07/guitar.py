@@ -23,9 +23,13 @@ class Guitar:
         return f"{self.name} ({self.year}) : ${self.cost:,.2f}"
 
     def get_age(self) -> int:
-        # Return how old the guitar is in years
+        """Return how old the guitar is in years"""
         return CURRENT_YEAR - self.year
 
     def is_vintage(self) -> bool:
         """Return True if the guitar is 50 or more years old, False otherwise."""
         return self.get_age() >= VINTAGE_AGE
+
+    def __lt__(self, other: "Guitar") -> bool:
+        """Return True if this guitar is 'less than' another, ordered by year (oldest to newest)."""
+        return self.year < other.year
