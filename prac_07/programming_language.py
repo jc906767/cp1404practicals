@@ -17,7 +17,7 @@ class ProgrammingLanguage:
         self.pointer_arithmetic = pointer_arithmetic
 
     def __str__(self) -> str:
-        """Return a user-friendly string for this language."""
+        """Return a user friendly string for this language."""
         pointer_text = "supports pointer arithmetic" if self.pointer_arithmetic else "no pointer arithmetic"
         return (f"{self.name} ({self.typing} typing, "
                 f"reflection={self.reflection}, {pointer_text}, "
