@@ -1,0 +1,27 @@
+BoxLayout:
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            orientation: 'horizontal'
+            TextInput:
+                id: input_number
+                text: '10'
+                font_size: 48
+                multiline: False
+                on_text: app.convert_distance(input_number.text)
+            BoxLayout:
+                orientation: 'vertical'
+                Button:
+                    text: 'up'
+                    on_press: app.input_change(input_number.text, (1))
+                Button:
+                    text: 'down'
+                    on_press: app.input_change(input_number.text, (-1))
+
+        #Button:
+        #    text: 'Convert Miles to KM'
+        #    on_press: app.convert_distance(input_number.text)
+        Label:
+            id: output_distance
+            text: 'Output distance'
+            color: (1, 1, 0, 1)
