@@ -25,7 +25,8 @@ class Taxi(Car):
 
     def start_fare(self):
         """Begin a new fare."""
-        self.current_fare_distance = 0
+        fare = self.price_per_km * self.current_fare_distance
+        return round(fare, 1)  # 1 decimal place -> nearest 10c
 
     def drive(self, distance):
         """Drive like parent Car but calculate fare distance as well."""
