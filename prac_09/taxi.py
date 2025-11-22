@@ -16,8 +16,9 @@ class Taxi(Car):
         self.current_fare_distance = 0
 
     def __str__(self):
-        """Return a string like a Car but with current fare distance."""
-        return f"{super().__str__()}, {self.current_fare_distance}km on current fare"
+        """Return a string like a Car but with current fare distance and price per km."""
+        return (f"{super().__str__()}, {self.current_fare_distance}km on current fare, "
+                f"${self.price_per_km:.2f}/km")
 
     def get_fare(self):
         """Return the price for the taxi trip."""
@@ -25,8 +26,7 @@ class Taxi(Car):
 
     def start_fare(self):
         """Begin a new fare."""
-        fare = self.price_per_km * self.current_fare_distance
-        return round(fare, 1)  # 1 decimal place -> nearest 10c
+        self.current_fare_distance = 0
 
     def drive(self, distance):
         """Drive like parent Car but calculate fare distance as well."""
