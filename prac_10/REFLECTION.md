@@ -35,8 +35,7 @@ For each one, write a short explanation of what was good about your review.
 
 ### Good Code Review 1
 Review on prac_06
-[https://github.com/vineetkumarJCU/cp1404practicals/pull/2/files
-]()
+[https://github.com/vineetkumarJCU/cp1404practicals/pull/2/files]()
 
 ### Explanation
 
